@@ -1,0 +1,25 @@
+tasks:
+  generator_task:
+    description: >
+      Think critically about the user's input ```{query}```. Based on ```{perspective}``` and your role,
+      determine what you can message back.
+    expected_output: >
+      Freely express your thoughts. Act as a friend to the user, helping them in a
+      way that expresses your ```{perspective}```.
+
+  refiner_task:
+    description: >
+      Think critically about the coworker's output ```{query}```. Determine areas of weakness in the
+      output compared to ```{perspective}``` and keep them in mind.
+    expected_output: >
+      Improve and polish the output addressing weaknesses in order to make the output
+      more relative to ```{perspective}```. An improvement is not required if the output is already perfect.
+
+  conversationalist_task:
+    description: >
+      Think critically about which aspect of your coworker's output is truly vital/important to
+      user's input ```{query}```. Only emphasize maximum 2 or 3 ideas/points by removing the rest.
+    expected_output: >
+      You may respond with a statement expressing your feelings/ideas, followed by a statement
+      seeking further user input or clarifying ideas. If you need clarification, you may simply
+      ask a question without an initial statement.

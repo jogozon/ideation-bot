@@ -15,7 +15,7 @@ const initialMessages = [
     text: "Teamwork makes the dreamwork!",
     sender: "Visionary",
     avatar: "",
-  }
+  },
 ];
 
 interface BotResponse {
@@ -47,7 +47,7 @@ interface ResponseData {
 }
 
 // const loadingMessage = {
-//     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+//     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 
 //     <dotlottie-player src="https://lottie.host/df7025df-5f5a-48f3-8b12-d672f47b0d41/Zilhgfygxm.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
 // }
@@ -77,8 +77,9 @@ const ChatInterface = () => {
     }
     setLoading(true);
     try {
+      const url = `https://the-board-bktinr7r6-jogozons-projects.vercel.app`;
       const response = await axios.get<ResponseData>(
-        `conversation/?query=${newMessage}`
+        `${url}/conversation/?query=${newMessage}`
       );
       const resData = response.data;
       if (response) {
@@ -95,17 +96,14 @@ const ChatInterface = () => {
           sender: "visionary",
           avatar: "",
         };
-        let resArr = [userMessage]
+        let resArr = [userMessage];
         if (selectedBots.includes("contrarian")) {
-          resArr.push(contrarianMessage)
+          resArr.push(contrarianMessage);
         }
         if (selectedBots.includes("visionary")) {
-          resArr.push(supporterMessage)
+          resArr.push(supporterMessage);
         }
-        setMessages([
-          ...messages,
-          ...resArr
-        ]);
+        setMessages([...messages, ...resArr]);
 
         console.log("Contrarian Raw:", contrarianRaw);
         console.log("Visionary Raw:", visionaryRaw);
@@ -178,9 +176,9 @@ const ChatInterface = () => {
             className="text-white border-2 border-solid border-white"
             onClick={handleSendMessage}
             onKeyDown={(e) => {
-                if (e.key === "Return") {
-                    handleSendMessage();
-                }
+              if (e.key === "Return") {
+                handleSendMessage();
+              }
             }}
           >
             Send

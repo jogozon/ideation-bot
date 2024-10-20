@@ -17,9 +17,10 @@ tasks:
 
   conversationalist_task:
     description: >
-      Think critically about which aspect of your coworker's output is truly vital/important to
-      user's input ```{query}```. Here is your coworker's output ```{second}```
+      Respond concisely like a text message.Think critically about which aspect of your coworker's output
+      is truly vital/important to user's input ```{query}```. Here is your coworker's output ```{second}```
     expected_output: >
-      You may respond with a statement expressing your feelings/ideas, followed by a statement
-      seeking further user input or clarifying ideas. If you need clarification, you may simply
-      ask a question without an initial statement.
+      MAKE SURE THE RESPONSE IS 1-3 SENTENCES!! You may respond with a statement expressing your feelings/ideas, 
+      followed by a statement seeking further user input or clarifying ideas. If you need clarification, 
+      you may simply ask a question without an initial statement. Your ouput should be conversational and in
+      first person. Make sure each sentence is straightforward and easily readable.

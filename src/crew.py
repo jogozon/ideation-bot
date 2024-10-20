@@ -2,8 +2,20 @@ from crewai import Agent
 from crewai import Crew
 from crewai import Task
 from crewai import LLM
+import os
+from dotenv import load_dotenv
 import yaml
-llm = LLM(model="gpt-4o", temperature=1.0, api_key="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")
+
+# Load environment variables
+load_dotenv()
+api_key = os.getenv("API_KEY")
+
+# Check if the API key is loaded correctly
+if not api_key:
+    raise ValueError("API_KEY is not set. Make sure the .env file contains the API key.")
+
+print(f"Loaded API Key: {api_key}")
+llm = LLM(model="gpt-4o", temperature=1.0, api_key=api_key)
 
 def load_prompts(path):
     filepath = f"config/{path}.yaml"
@@ -72,6 +84,7 @@ class TheBoard:
             output_file="/o/initial_thoughts.txt",
             agent=self.generator,
         )
+        print(f"Initializing Crew with API Key: {self.llm.api_key}")
         crew = Crew(agents=[self.generator], tasks=[first_shot])
         result = crew.kickoff()
         return result
@@ -105,3 +118,4 @@ class TheBoard:
         crew = Crew(agents=[self.conversationalist], tasks=[final_attempt])
         result = crew.kickoff()
         return result
+    

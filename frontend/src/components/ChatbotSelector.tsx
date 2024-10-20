@@ -1,8 +1,8 @@
 // src/components/ChatbotSelector.tsx
 import React, { useState } from "react";
-import contrarianImage from '../assets/contrarian.png';
-import librarianImage from '../assets/librarian.png';
-import visionaryImage from '../assets/visionary.png';
+import contrarianImage from '../assets/contrarian_profile.png';
+import supporterImage from '../assets/supporter_profile.png';
+import librarianImage from '../assets/intelligent_profile.png';
 import { Toggle } from "./ui/toggle";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 interface ChatbotSelectorProps {
@@ -32,7 +32,7 @@ const ChatbotSelector: React.FC<ChatbotSelectorProps> = ({
     },
     {
       name: "Visionary",
-      image: visionaryImage
+      image: supporterImage
     }
   ];
 
@@ -46,25 +46,24 @@ const ChatbotSelector: React.FC<ChatbotSelectorProps> = ({
         <Toggle
           key={user.name}
           aria-label={`Toggle ${user.name}`}
-          className={`p-0 h-10 w-10 rounded-full transition-all duration-200 ease-in-out
-              ${
-                activeToggles[user.name]
-                  ? "ring-2 ring-primary"
-                  : "hover:scale-110"
-              }
+          className={`p-0 h-12 w-12 transition-all duration-200 ease-in-out
+              ${activeToggles[user.name]
+              ? "ring-2 ring-primary"
+              : "hover:scale-110"
+            }
             `}
           pressed={activeToggles[user.name]}
           onPressedChange={() => handleToggle(user.name)}
         >
           <Avatar
-            className={`h-10 w-10 transition-all duration-200 ease-in-out
+            className={`h-12 w-12 flex item-center justify-center transition-all duration-200 ease-in-out
               ${activeToggles[user.name] ? "bg-primary" : "bg-secondary"}
             `}
           >
             <AvatarImage
               src={user.image}
               alt={`Puppy representing ${user.name}`}
-              className={`transition-all duration-200 ease-in-out
+              className={`w-10 h-10 object-contain transition-all duration-200 ease-in-out
                   ${activeToggles[user.name] ? "opacity-70" : "opacity-100"}
                 `}
             />

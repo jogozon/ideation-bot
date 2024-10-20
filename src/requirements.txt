@@ -4,3 +4,5 @@ fastapi
 dotenv
 os
 google-generativeai
+langchain
+crewai_tools

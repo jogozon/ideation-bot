@@ -46,12 +46,6 @@ interface ResponseData {
   visionary: BotResponse;
 }
 
-// const loadingMessage = {
-//     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-//     <dotlottie-player src="https://lottie.host/df7025df-5f5a-48f3-8b12-d672f47b0d41/Zilhgfygxm.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
-// }
-
 const ChatInterface = () => {
   const [messages, setMessages] = useState(initialMessages);
   const [newMessage, setNewMessage] = useState("");
@@ -77,9 +71,9 @@ const ChatInterface = () => {
     }
     setLoading(true);
     try {
-      const url = `https://the-board-bktinr7r6-jogozons-projects.vercel.app`;
+      const API_URL =  process.env.API_URL;
       const response = await axios.get<ResponseData>(
-        `${url}/conversation/?query=${newMessage}`
+        `${API_URL}/conversation/?query=${newMessage}`
       );
       const resData = response.data;
       if (response) {

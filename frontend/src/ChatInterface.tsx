@@ -56,7 +56,7 @@ interface ResponseData {
 const ChatInterface = () => {
   const [messages, setMessages] = useState(initialMessages);
   const [newMessage, setNewMessage] = useState("");
-  const [username, setUsername] = useState("You");
+  const username = "You";
   const [selectedBots, setChatbots] = useState(["contrarian", "visionary"]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(false);

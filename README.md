@@ -1,6 +1,1 @@
-# TO DO:
-- RAG pipeline to refine user questions, identify key topics, and construct queries
-- Support crew agent
-- Devil crew agent
-- Validator crew agent
-- User interface
+**The Board** is an innovative platform crafted to offer creators a feedback-driven conversation with AI agents. The platform is equipped with two agents that offer distinct personalities. Depending on what the creator is seeking, they can share, stress-test, refine, and better understand their ideas. This can aid in escaping a stagnant point in the ideation process.

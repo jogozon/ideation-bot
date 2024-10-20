@@ -72,6 +72,7 @@ const ChatInterface = () => {
     setLoading(true);
     try {
       const API_URL =  process.env.API_URL;
+      console.log(API_URL);
       const response = await axios.get<ResponseData>(
         `${API_URL}/conversation/?query=${newMessage}`
       );

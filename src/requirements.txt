@@ -1,0 +1,6 @@
+crewai
+yaml
+fastapi
+dotenv
+os
+google-generativeai

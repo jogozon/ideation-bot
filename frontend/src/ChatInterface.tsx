@@ -78,7 +78,7 @@ const ChatInterface = () => {
     setLoading(true);
     try {
       const response = await axios.get<ResponseData>(
-        `http://localhost:8000/conversation/?query=${newMessage}`
+        `https://the-board-6xg5m9kxk-jogozons-projects.vercel.app/?vercelToolbarCode=xs_sud8BJOozTPu/conversation/?query=${newMessage}`
       );
       const resData = response.data;
       if (response) {

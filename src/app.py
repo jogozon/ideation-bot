@@ -5,8 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",  # React dev server
-    "http://127.0.0.1:8000"
+    "https://the-board-jogozon-jogozons-projects.vercel.app/"
 ]
 
 app.add_middleware(

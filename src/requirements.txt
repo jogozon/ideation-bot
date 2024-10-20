@@ -5,4 +5,4 @@ dotenv
 os
 google-generativeai
 langchain
-crewai_tools
+crewai-tools

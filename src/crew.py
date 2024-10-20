@@ -10,11 +10,6 @@ import yaml
 load_dotenv()
 api_key = os.getenv("API_KEY")
 
-# Check if the API key is loaded correctly
-if not api_key:
-    raise ValueError("API_KEY is not set. Make sure the .env file contains the API key.")
-
-print(f"Loaded API Key: {api_key}")
 llm = LLM(model="gpt-4o", temperature=1.0, api_key=api_key)
 
 def load_prompts(path):

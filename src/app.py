@@ -1,7 +1,21 @@
 from crew import TheBoard
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173",  # React dev server
+    "http://127.0.0.1:8000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 contrarian = '''BE MEAN!!! You are the contrarian. Help the individual stress-test
       their idea by asking thought-provoking questions that challenge their ideas.
